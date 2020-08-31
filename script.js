@@ -1,17 +1,9 @@
 
 var name = document.getElementsByClassName('.watch-container');
-var webName = "first_question.html";
+var photoNames = ['images/interface01.png', 'images/interface02.png', 'images/interface03.png'];
+var random= Math.floor(Math.random() * photoNames.length);
+document.getElementById("interface").src = photoNames[random];
 
-window.setTimeout(function(){
-  document.getElementById("interface").src="images/interface02.png";
-  webName = 'second_question.html';
-}, 50000);
-
-window.setTimeout(function(){
-  document.getElementById("interface").src="images/interface03.png";
-  webName = 'third_question.html';
-}, 100000);
-//randomnize the inerface
 $(document).keypress(function(e) {
 	if(e.which == 13) {
     $(".watch-container").addClass("show");
@@ -23,10 +15,12 @@ $(document).keypress(function(e) {
       }
   },5000);
   window.setTimeout(function(){
-      window.location.href = webName;
+    //randomnize the inerface
+    var webNames = ['first_question.html', 'second_question.html', 'third_question.html'];
+    var webName = webNames[random];
+    window.location.href = webName;
   }, 10000);
 });
-
 
 
 
